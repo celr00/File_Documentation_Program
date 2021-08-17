@@ -1,7 +1,7 @@
 # File_Documentation_Program
  Program that reads a other C++ programs and creates an HTML document with the documentarion.
  
- For this we will need to add the following tags to the program you want to document.
+ For this we will need to add the following tags to the program we want to document.
   - @progName
   - @author
   - @date
