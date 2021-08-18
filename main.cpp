@@ -6,14 +6,14 @@ using namespace std;
 
 int main(){
 
-    string nombre;
-    cout << "Escribe el nombre del archivo que quieres documentar: "<<endl;
-    cin >> nombre;
+    string name;
+    cout << "Please enter the name of the program you want to document: "<<endl;
+    cin >> name;
 
     ifstream entrada;
-    entrada.open("programs/"+nombre+".cpp");
+    entrada.open("programs/"+name+".cpp");
     ofstream salida;
-    salida.open("txt_files/"+nombre+".txt");
+    salida.open("txt_files/"+name+".txt");
 
     string linea;
 
@@ -25,9 +25,9 @@ int main(){
     salida.close();
 
     ifstream ftexto;
-    ftexto.open("txt_files/"+nombre+".txt");
+    ftexto.open("txt_files/"+name+".txt");
     ofstream fhtml;
-    fhtml.open("html/"+nombre+".html");
+    fhtml.open("html/"+name+".html");
 
     fhtml << "<!DOCTYPE html>" <<endl;
     fhtml << "<html lang=\"en\">" <<endl;
@@ -50,7 +50,7 @@ int main(){
             info = linea.substr(index+10);
 
             fhtml << "<h2>" <<endl;
-            fhtml << "Programa: " <<info <<endl;
+            fhtml << "Program: " <<info <<endl;
             fhtml << "</h2>" <<endl;
 
         }else if(linea.find("@author")!= -1){
