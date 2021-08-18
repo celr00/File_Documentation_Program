@@ -11,9 +11,9 @@ int main(){
     cin >> nombre;
 
     ifstream entrada;
-    entrada.open("entradas/"+nombre+".cpp");
+    entrada.open("programs/"+nombre+".cpp");
     ofstream salida;
-    salida.open("texto/"+nombre+".txt");
+    salida.open("txt_files/"+nombre+".txt");
 
     string linea;
 
@@ -25,7 +25,7 @@ int main(){
     salida.close();
 
     ifstream ftexto;
-    ftexto.open("texto/"+nombre+".txt");
+    ftexto.open("txt_files/"+nombre+".txt");
     ofstream fhtml;
     fhtml.open("html/"+nombre+".html");
 
