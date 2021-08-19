@@ -1,9 +1,9 @@
 /*
 @progName Array Excersice
-@author Carlos Enrique Lozada Rodr�guez
+    @author Carlos Enrique Lozada Rodr�guez
 @date August 7th, 2021
 
-@desc Program that defines new Array Functions
+                @desc Program that defines new Array Functions
 
 Doy mi palabra de que he realizado esta actividad con integridad acad�mica.
 */

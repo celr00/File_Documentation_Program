@@ -35,7 +35,7 @@ int main(){
     fhtml << "<meta charset=\"UTF-8\">" <<endl;
     fhtml << "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">" <<endl;
     fhtml << "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">" <<endl;
-    fhtml << "<title" << nombre+"'s Documentation"<< "</title>"<<endl;
+    fhtml << "<title" << name+"'s Documentation"<< "</title>"<<endl;
     fhtml << "</head>" <<endl;
     fhtml << "<body>" <<endl;
 
