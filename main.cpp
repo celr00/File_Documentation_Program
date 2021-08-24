@@ -10,24 +10,10 @@ int main(){
     cout << "Please enter the name of the program you want to document: "<<endl;
     cin >> name;
 
-    ifstream entrada;
-    entrada.open("programs/"+name+".cpp");
-    ofstream salida;
-    salida.open("txt_files/"+name+".txt");
-
-    string linea;
-
-    while(getline(entrada, linea)){
-        salida << linea <<endl;
-    }
-
-    entrada.close();
-    salida.close();
-
-    ifstream ftexto;
-    ftexto.open("txt_files/"+name+".txt");
+    ifstream source;
+    source.open(name+".cpp");
     ofstream fhtml;
-    fhtml.open("html/"+name+".html");
+    fhtml.open(name+".html");
 
     fhtml << "<!DOCTYPE html>" <<endl;
     fhtml << "<html lang=\"en\">" <<endl;
@@ -39,61 +25,63 @@ int main(){
     fhtml << "</head>" <<endl;
     fhtml << "<body>" <<endl;
 
-    while(getline(ftexto, linea)){
+    string line;
+
+    while(getline(source, line)){
         //salida << linea <<endl;
         int index;
         string info;
 
-        if(linea.find("@progName")!= -1){
+        if(line.find("@progName")!= -1){
 
-            index = linea.find("@progName");
-            info = linea.substr(index+10);
+            index = line.find("@progName");
+            info = line.substr(index+10);
 
             fhtml << "<h2>" <<endl;
             fhtml << "Program: " <<info <<endl;
             fhtml << "</h2>" <<endl;
 
-        }else if(linea.find("@author")!= -1){
+        }else if(line.find("@author")!= -1){
 
-            index = linea.find("@author");
-            info = linea.substr(index+8);
+            index = line.find("@author");
+            info = line.substr(index+8);
 
             fhtml << "<strong> Autor: </strong>" << info <<"<br>"<<endl;
 
-        }else if(linea.find("@date")!= -1){
+        }else if(line.find("@date")!= -1){
 
-            index = linea.find("@date");
-            info = linea.substr(index+6);
+            index = line.find("@date");
+            info = line.substr(index+6);
 
             fhtml << "<strong> Date: </strong>" << info <<"<br>"<<endl;
 
-        }else if(linea.find("@funcName")!= -1){
+        }else if(line.find("@funcName")!= -1){
 
-            index = linea.find("@funcName");
-            info = linea.substr(index+9);
+            index = line.find("@funcName");
+            info = line.substr(index+9);
 
             fhtml << "<h3>" <<endl;
             fhtml << "<hr><br> Function: " << info <<"<br>"<<endl;
             fhtml << "</h2>" <<endl;
 
-        }else if(linea.find("@desc")!= -1){
+        }else if(line.find("@desc")!= -1){
 
-            index = linea.find("@desc");
-            info = linea.substr(index+6);
+            index = line.find("@desc");
+            info = line.substr(index+6);
 
             fhtml << "<strong> Description: </strong>" << info <<"<br>"<<endl;
 
-        }else if(linea.find("@param")!= -1){
+        }else if(line.find("@param")!= -1){
 
-            index = linea.find("@param");
-            info = linea.substr(index+7);
+            index = line.find("@param");
+            info = line.substr(index+7);
 
             fhtml << "<strong> Parameters: </strong>" << info <<"<br>"<<endl;
 
-        }else if(linea.find("@return")!= -1){
+        }else if(line.find("@return")!= -1){
 
-            index = linea.find("@return");
-            info = linea.substr(index+8);
+            index = line.find("@return");
+            info = line.substr(index+8);
 
             fhtml << "<strong> Return: </strong>" << info <<"<br>"<<endl;
         }
@@ -102,7 +90,7 @@ int main(){
     fhtml << "</body>" <<endl;
     fhtml << "</html>" <<endl;
 
-    ftexto.close();
+    source.close();
     fhtml.close();
 
     return 0;
