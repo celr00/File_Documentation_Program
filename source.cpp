@@ -1,4 +1,4 @@
-/*
+/**
 @progName Array Excersice
     @author Carlos Enrique Lozada Rodr�guez
 @date August 7th, 2021
@@ -12,7 +12,7 @@ Doy mi palabra de que he realizado esta actividad con integridad acad�mica.
 #include<string>
 using namespace std;
 
-/*
+/**
 @funcName dataValidation
 @desc Function that confirms that the user won't enter a numer out of a defined range.
 @params startLimit and endLimit
