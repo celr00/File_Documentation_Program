@@ -11,9 +11,9 @@ int main(){
     cin >> name;
 
     ifstream source;
-    source.open("programs/"+name+".cpp");
+    source.open(name+".cpp");
     ofstream fhtml;
-    fhtml.open("html/"+name+".html");
+    fhtml.open(name+".html");
 
     fhtml << "<!DOCTYPE html>" <<endl;
     fhtml << "<html lang=\"en\">" <<endl;
